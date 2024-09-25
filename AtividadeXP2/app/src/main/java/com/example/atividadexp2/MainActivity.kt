@@ -48,6 +48,7 @@ fun PlayerForm() {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally) {
 
+        Spacer(modifier = Modifier.height(30.dp))
         Text(text = "Nome Jogador")
 
         Spacer(modifier = Modifier.height(18.dp))
