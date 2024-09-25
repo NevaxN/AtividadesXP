@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PlayerForm() {
     var nome by remember{ mutableStateOf("") }
-    var level by remember{ mutableStateOf(0) }
+    var level by remember{ mutableStateOf(1) }
     var poder by remember{ mutableStateOf(0) }
     var equipamento by remember{ mutableStateOf(0) }
     var modificador by remember{ mutableStateOf(0) }
@@ -80,8 +80,10 @@ fun PlayerForm() {
         Spacer(modifier = Modifier.height(18.dp))
 
         Row {
-            poder = level + equipamento + modificador
-            Text(text = "Poder: $poder")
+            if(poder in 1..10){
+                poder = level + equipamento + modificador
+                Text(text = "Poder: $poder")
+            }
         }
 
         Spacer(modifier = Modifier.height(18.dp))
